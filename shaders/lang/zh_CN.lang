@@ -171,8 +171,8 @@ screen.UNDERWATER_COLOR_SETTINGS=水下颜色
 screen.WATER_WAVE_SETTINGS=水面波浪法线 §e[*]§r
 screen.WATER_WAVE_SETTINGS.comment=自定义水面方向波浪(法线)的设置。§e[*]§r 这些设置只在 “水体样式” 设置为 “Reimagined + 波浪” 或 “Unbound” 时起作用。
 
-screen.WAVING_SETTINGS=波浪贴图
-screen.WAVING_SETTINGS.comment=关于波浪贴图的设置。
+screen.WAVING_SETTINGS=摇曳贴图
+screen.WAVING_SETTINGS.comment=关于摇曳贴图的设置。
 
 screen.OTHER_SETTINGS=其他
 screen.OTHER_SETTINGS.comment=不属于任何其他类别的设置。
