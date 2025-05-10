@@ -29,7 +29,7 @@ option.info2.comment=最佳设置因人而异,但是使用默认设置对大多�
 
 option.info3=什么是配置文件或视觉风格
 value.info3.0=
-option.info3.comment= “配置文件” 设置会改变 “性能设置” 菜单中的设置值,但不会影响任何基于个人偏好的设置。 “视觉风格” 会改变许多设置上的 “默认样式” 值,但不会对性能产生重要影响。
+option.info3.comment= “配置文件” 设置会改变 “性能设置” 菜单中的设置值,但不会影响任何基于个人偏好的设置。 “视觉风格” 会改变许多设置上的 “跟随风格” 值,但不会对性能产生重要影响。
 
 option.info4=RP 支持是什么
 value.info4.0=
@@ -61,7 +61,7 @@ option.info10.comment=EminGT: Complementary 的主要开发者。 Capt Tatsu: BS
 
 #Style
 option.SHADER_STYLE=视觉风格
-option.SHADER_STYLE.comment=决定着色器的默认视觉样式。 §bReimagined§r: 在保留 Minecraft 独特视觉元素的同时补充它。 §dUnbound§r: 用半现实主义的奇幻风格重新演绎 Minecraft 的视觉效果。 §e[*]§r 受影响的设置: 水体样式,云层样式,太阳/月亮样式,太阳/月亮角度,极光样式,发光矿石。
+option.SHADER_STYLE.comment=决定着色器的默认视觉风格。 §bReimagined§r: 在保留 Minecraft 独特视觉元素的同时补充它。 §dUnbound§r: 用半现实主义的奇幻风格重新演绎 Minecraft 的视觉效果。 §e[*]§r 受影响的设置: 水体样式,云层样式,太阳/月亮样式,太阳/月亮角度,极光样式,发光矿石。
 value.SHADER_STYLE.1=§bReimagined
 value.SHADER_STYLE.4=§dUnbound
 
@@ -246,7 +246,7 @@ value.ENTITY_SHADOWS_DEFINE.-1=§aOFF
 value.ENTITY_SHADOWS_DEFINE.1=§4§k-§r§4§l§n§oON§r§4§k- §r§c[-]
 
 option.DETAIL_QUALITY=细节品质
-option.DETAIL_QUALITY.comment=调整几个影响性能的小细节。调整以下品质：水体材质、TAA、照明调整、夜晚星云、下界风暴、末地光束、天空效果反射、雨水坑精度。
+option.DETAIL_QUALITY.comment=调整几个影响性能的小细节。调整以下品质：水体材质、TAA、照明调整、夜晚星云、下界风暴、末地光束、天空效果反射、雨水坑精度、摇曳效果。
 value.DETAIL_QUALITY.0=§a土豆PC
 value.DETAIL_QUALITY.2=§e中
 value.DETAIL_QUALITY.3=§c高
@@ -332,8 +332,8 @@ option.LIGHTSHAFT_NIGHT_I=光束夜晚系数
 option.LIGHTSHAFT_RAIN_I=光束雨天系数
 
 option.CLOUD_STYLE_DEFINE=云层样式
-option.CLOUD_STYLE_DEFINE.comment=确定云层的样式。§e[*]§r “默认样式” 表示该设置将由着色器选项主菜单中的 “视觉样式” 设置自动确定。§e[*]§r “Vanilla” 样式需要在 “视频设置” 中启用云层。
-value.CLOUD_STYLE_DEFINE.-1=默认样式
+option.CLOUD_STYLE_DEFINE.comment=确定云层的样式。§e[*]§r “跟随风格” 表示该设置将由着色器选项主菜单中的 “视觉风格” 设置自动确定。§e[*]§r “Vanilla” 样式需要在 “视频设置” 中启用云层。
+value.CLOUD_STYLE_DEFINE.-1=跟随风格
 value.CLOUD_STYLE_DEFINE.0=§cOFF
 value.CLOUD_STYLE_DEFINE.1=Reimagined
 value.CLOUD_STYLE_DEFINE.3=Unbound
@@ -440,8 +440,8 @@ option.GR_BB=蓝色到蓝色
 option.GR_BC=蓝色曲线
 
 option.WATER_STYLE_DEFINE=水体样式
-option.WATER_STYLE_DEFINE.comment=确定水体样式。§e[*]§r “默认样式” 表示该设置将由着色器选项主菜单中的 “视觉样式” 设置自动确定。
-value.WATER_STYLE_DEFINE.-1=默认样式
+option.WATER_STYLE_DEFINE.comment=确定水体样式。§e[*]§r “跟随风格” 表示该设置将由着色器选项主菜单中的 “视觉风格” 设置自动确定。
+value.WATER_STYLE_DEFINE.-1=跟随风格
 value.WATER_STYLE_DEFINE.1=Reimagined
 value.WATER_STYLE_DEFINE.2=Reimagined + 波浪
 value.WATER_STYLE_DEFINE.3=Unbound
@@ -501,13 +501,13 @@ option.WATER_SIZE_MULT.comment=调整水面方向波浪(法线)的大小。
 
 option.SUN_ANGLE=太阳/月亮角度
 option.SUN_ANGLE.comment=调整正午时太阳/月亮相对于世界的角度。§a[+]§r Reimagined 的光照模型经过特别设计,使 “0” 太阳角度也能像其他角度一样正常工作。
-value.SUN_ANGLE.-1=默认样式
+value.SUN_ANGLE.-1=跟随风格
 value.SUN_ANGLE.0=0 §r(§bReimagined§r)
 value.SUN_ANGLE.-40=-40 §r(§dUnbound§r)
 
 option.SUN_MOON_STYLE_DEFINE=太阳/月亮样式
 option.SUN_MOON_STYLE_DEFINE.comment=确定太阳/月亮的样式。§e[*]§r 由于太阳/月亮/天空盒差异的限制,此设置可能会与某些资源包错误地交互。
-value.SUN_MOON_STYLE_DEFINE.-1=默认样式
+value.SUN_MOON_STYLE_DEFINE.-1=跟随风格
 value.SUN_MOON_STYLE_DEFINE.1=Reimagined
 value.SUN_MOON_STYLE_DEFINE.2=Unbound
 value.SUN_MOON_STYLE_DEFINE.3=Unbound - 更小
@@ -531,12 +531,12 @@ value.RAINBOWS.3=总是
 
 option.AURORA_STYLE_DEFINE=北极光样式
 option.AURORA_STYLE_DEFINE.comment=确定夜空中出现的北极光样式。
-value.AURORA_STYLE_DEFINE.-1=默认样式
+value.AURORA_STYLE_DEFINE.-1=跟随风格
 value.AURORA_STYLE_DEFINE.0=§cOFF
 value.AURORA_STYLE_DEFINE.1=Reimagined
 value.AURORA_STYLE_DEFINE.2=Unbound
 
-option.AURORA_CONDITION=极光
+option.AURORA_CONDITION=极光条件
 option.AURORA_CONDITION.comment=确定极光出现的条件。§e[*]§r 无论此设置如何,极光都只在夜晚出现。
 value.AURORA_CONDITION.0=每天夜晚
 value.AURORA_CONDITION.1=满月
@@ -726,6 +726,9 @@ value.IPBR_EMISSIVE_MODE.1=仅 IPBR+
 value.IPBR_EMISSIVE_MODE.3=labPBR > IPBR+
 value.IPBR_EMISSIVE_MODE.2=seuspbr > IPBR+
 
+option.IPBR_COMPATIBILITY_MODE=IPBR+ 兼容模式
+option.IPBR_COMPATIBILITY_MODE.comment=改变某些 IPBR+ 功能的计算方式,使其不那么激进,从而减少资源包或模组出现的问题。
+
 option.IPBR_PARTICLE_FEATURES=IPBR+ 粒子特性
 option.IPBR_PARTICLE_FEATURES.comment=为粒子启用多种特性,包括发光熔岩粒子和颜色更好的水粒子等。
 
@@ -764,15 +767,8 @@ option.COLOR_CODED_PROGRAMS.comment=显示正在使用哪些着色器程序来�
 option.GLOWING_COLORED_PARTICLES=强制粒子发光 §c[-]§r
 option.GLOWING_COLORED_PARTICLES.comment=使所有技术上 “有色” 的粒子变为自发光粒子。§c[-]§r 此选项不建议用于一般游戏,因为它会使许多由非发光材料制成的粒子发光。
 
-option.MINIMUM_LIGHT_MODE=洞穴照明
-option.MINIMUM_LIGHT_MODE.comment=为没有天光的区域添加额外照明。§a[+]§r “默认” 选项根据 “视频设置” 中的 “亮度” 滑块确定照明。§c[-]§r 大幅更改此设置可能会破坏光照平衡。
-value.MINIMUM_LIGHT_MODE.0=非常暗
-value.MINIMUM_LIGHT_MODE.1=暗
-value.MINIMUM_LIGHT_MODE.2=默认 §a[+]
-value.MINIMUM_LIGHT_MODE.3=明亮
-value.MINIMUM_LIGHT_MODE.4=非常明亮
-value.MINIMUM_LIGHT_MODE.5=超级明亮 §c[-]
-value.MINIMUM_LIGHT_MODE.6=极端明亮 §c[-]
+option.CAVE_LIGHTING=洞穴照明系数
+option.CAVE_LIGHTING.comment=为没有天光的区域添加额外照明。§e[*]§r 洞穴照明也会受到 “视频设置” 中的 “亮度” 滑块的影响。§c[-]§r 大幅更改此设置可能会破坏光照平衡。
 
 option.AMBIENT_MULT=阴影照明系数
 option.AMBIENT_MULT.comment=确定阴影中环境照明的量。§c[-]§r 大幅更改此设置可能会破坏光照平衡。
@@ -798,9 +794,9 @@ option.COATED_TEXTURE_MULT=涂层贴图强度
 option.COATED_TEXTURE_MULT.comment=调整贴图上自动生成的尘埃细节的强度。
 
 option.GLOWING_ORE_MASTER=§e启用发光矿石
-option.GLOWING_ORE_MASTER.comment=启用发光矿石功能。§e[*]§r 仅当 “视觉风格” 设置为 “Unbound” 时,选择 “默认” 才会启用发光矿石。§e[*]§r 如果未启用此选项,以下设置将不起作用。
+option.GLOWING_ORE_MASTER.comment=启用发光矿石功能。§e[*]§r 仅当 “视觉风格” 设置为 “Unbound” 时,选择 “跟随风格” 才会启用发光矿石。§e[*]§r 如果未启用此选项,以下设置将不起作用。
 value.GLOWING_ORE_MASTER.0=§cOFF
-value.GLOWING_ORE_MASTER.1=默认 [*]
+value.GLOWING_ORE_MASTER.1=跟随风格
 value.GLOWING_ORE_MASTER.2=§aON
 
 option.GLOWING_ORE_MULT=矿石发光强度
@@ -926,7 +922,7 @@ option.WAVING_LAVA.comment=向熔岩添加持续的运动。§e[*]§r 熔岩摇�
 option.WAVING_LILY_PAD=摇曳睡莲叶
 option.WAVING_LILY_PAD.comment=为睡莲叶和蛙卵添加运动来模拟水波冲击。
 
-option.WAVING_WATER_VERTEX=摇曳水体
+option.WAVING_WATER_VERTEX=摇曳水体高度
 option.WAVING_WATER_VERTEX.comment=添加水位运动来模拟风吹动。 §e[*]§r 此选项与 “波浪强度” 设置无关。
 
 option.WAVING_RAIN=摇曳雨雪
