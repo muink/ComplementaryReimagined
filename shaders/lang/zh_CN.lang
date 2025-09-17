@@ -520,8 +520,12 @@ option.SUN_MOON_DURING_RAIN.comment=确定下雨时太阳/月亮是否可见。
 
 option.NIGHT_STAR_AMOUNT=夜晚星星数量
 option.NIGHT_STAR_AMOUNT.comment=确定夜空中星星的数量。
-value.NIGHT_STAR_AMOUNT.2=中等
-value.NIGHT_STAR_AMOUNT.3=高
+value.NIGHT_STAR_AMOUNT.0=OFF
+value.NIGHT_STAR_AMOUNT.1=稀少
+value.NIGHT_STAR_AMOUNT.2=较少
+value.NIGHT_STAR_AMOUNT.3=中等
+value.NIGHT_STAR_AMOUNT.4=较多
+value.NIGHT_STAR_AMOUNT.5=很多
 
 option.RAINBOWS=彩虹
 option.RAINBOWS.comment=早晨/傍晚时在太阳的对面出现彩虹。
