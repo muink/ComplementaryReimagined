@@ -35,9 +35,9 @@ option.info4=RP 支持是什么
 value.info4.0=
 option.info4.comment=RP 支持选项决定了着色器如何处理 Minecraft 中的不同方块。例如, §b集成PBR+§r 会把金块视为反光材质,而 §elabPBR§r 或 §eseuspbr§r 需要你安装资源包来告诉着色器。将RP支持设置为§aBasic§r将使除了少数例外情况外,没有方块被视为 “特殊” 。
 
-option.info5=如何解决模组问题
+option.info5=什么是黄色设置？
 value.info5.0=
-option.info5.comment=由于着色器包的工作方式,它们不可避免地会与模组存在不兼容问题,但是你可以查看这个关于 Complementary 的模组问题的信息页面来查看许多已知的解决方法。 www.complementary.dev/mod-issues
+option.info5.comment=名称显示为黄色的设置表示该设置虽然不在 “性能设置” 类别中,但会对性能产生可衡量的影响。如果启用后选项文本显示为红色,则表示性能开销非常高。
 
 option.info6=
 value.info6.0=
@@ -57,7 +57,7 @@ option.info9.comment=支持 Complementary 开发的最佳方式是与你的朋�
 
 option.info10=制作人员
 value.info10.0=
-option.info10.comment=EminGT: Complementary 的主要开发者。 Capt Tatsu: BSL着色器的开发者,正是他的慷慨才使 Complementary 成为可能。 特别感谢: IMS212, sp614x, Chocapic13, Robobo1221, SixthSurge, null511, fayer3, catlikecoding, Builderb0y, Jessie, SpacEagle17, isuewo, flytrap
+option.info10.comment=EminGT: Complementary 的主要开发者。 Capt Tatsu: BSL着色器的开发者,正是他的慷慨才使 Complementary 成为可能。 特别感谢: IMS212, sp614x, Chocapic13, Robobo1221, SixthSurge, null511, fayer3, catlikecoding, Builderb0y, Jessie, SpacEagle17, isuewo, flytrap, gri573, FoZy-STYLE
 
 #Style
 option.SHADER_STYLE=视觉风格
@@ -147,7 +147,7 @@ screen.NETHER_LIGHT_MULTS=下界
 screen.END_LIGHT_MULTS=末地
 
 screen.BLOCKLIGHT_COLOR_SETTINGS=方块发光颜色 §e[*]§r
-screen.BLOCKLIGHT_COLOR_SETTINGS.comment=调整光源方块发出的颜色。
+screen.BLOCKLIGHT_COLOR_SETTINGS.comment=调整光源方块发出的颜色。§e[*]§r 如果启用了 “高级颜色追踪” 设置,这些颜色设置不会影响大多数灯光,但 “方块光强度” 滑块除外。
 
 screen.PIXEL_LIGHTING_SETTINGS=像素照明
 screen.PIXEL_LIGHTING_SETTINGS.comment=使用贴图空间的像素照明设置。
@@ -155,8 +155,8 @@ screen.PIXEL_LIGHTING_SETTINGS.comment=使用贴图空间的像素照明设置�
 screen.MOON_PHASE_INF_SETTINGS=月相影响
 screen.MOON_PHASE_INF_SETTINGS.comment=确定不同月相如何影响夜晚照明。
 
-screen.ACL_FEATURES_SETTINGS=高级彩色照明(ACL) 独家功能 §e[*]§r
-screen.ACL_FEATURES_SETTINGS.comment=有关高级彩色照明独有功能的设置。§e[*]§r 仅当在 “性能设置” 中启用了 “高级彩色照明” 并且您的系统支持它时,这些功能才有效。
+screen.ACT_FEATURES_SETTINGS=高级颜色追踪(ACT) 独家功能 §e[*]§r
+screen.ACT_FEATURES_SETTINGS.comment=有关高级颜色追踪独有功能的设置。§e[*]§r 仅当在 “性能设置” 中启用了 “高级颜色追踪” 并且您的系统支持它时,这些功能才有效。
 
 screen.PIXELATED_LIGHTING_SETTINGS=像素化照明
 screen.PIXELATED_LIGHTING_SETTINGS.comment=使某些灯光效果像素化的设置。
@@ -199,10 +199,9 @@ value.WATER_REFLECT_QUALITY.1=§e土豆PC
 value.WATER_REFLECT_QUALITY.2=§c中
 
 option.BLOCK_REFLECT_QUALITY=方块反射品质 §e[*]§r
-option.BLOCK_REFLECT_QUALITY.comment=调整固体材质上的反射品质。§c高§r：太阳/月亮高光 + 使用时间过滤器的光滑镜面反射。§e中§r：太阳/月亮高光 + 镜面反射。§a低§r：仅太阳/月亮高光。§e[*]§r RP 支持选项必须设置为除 “Basic” 之外的任何值才能出现任意镜面反射。
+option.BLOCK_REFLECT_QUALITY.comment=调整固体材质上的反射品质。§c高§r：太阳/月亮高光 + 高级镜面反射。§e低§r：仅太阳/月亮高光。§e[*]§r RP 支持选项必须设置为除 “Basic” 之外的任何值才能出现任意镜面反射。
 value.BLOCK_REFLECT_QUALITY.0=§aOFF
 value.BLOCK_REFLECT_QUALITY.1=§e低
-value.BLOCK_REFLECT_QUALITY.2=§c中
 value.BLOCK_REFLECT_QUALITY.3=§c高
 
 option.SHADOW_QUALITY=实时阴影品质
@@ -224,7 +223,7 @@ value.LIGHTSHAFT_QUALI_DEFINE.3=§c高
 value.LIGHTSHAFT_QUALI_DEFINE.4=§4非常高
 
 option.shadowDistance=阴影距离
-option.shadowDistance.comment=调整玩家周围实时阴影被渲染的距离。§e[*]§r 该值被内部限制在 “渲染距离” 以内。§e[*]§r 建议将此值设置为渲染距离的 80% 左右,以获得最佳性能和覆盖范围。§c[-]§r 较低的值可能会导致过多的光束泄漏。
+option.shadowDistance.comment=调整玩家周围实时阴影被渲染的距离。§c[-]§r 较低的值可能会导致过多的光束泄漏。
 value.shadowDistance.64.0=§a4 区块 §c[-]
 value.shadowDistance.80.0=§a5 区块 §c[-]
 value.shadowDistance.96.0=§a6 区块 §c[-]
@@ -240,13 +239,14 @@ value.shadowDistance.512.0=§4§l32 区块
 value.shadowDistance.768.0=§4§l§n§o48 区块
 value.shadowDistance.1024.0=§4§k-§r§4§l§n§o64 区块§r§4§k-
 
-option.ENTITY_SHADOWS_DEFINE=实体阴影
-option.ENTITY_SHADOWS_DEFINE.comment=允许实体和方块实体投射阴影。§c[-]§r 实体阴影对性能的影响远超预期，在某些情况下会降低 50% 以上的 FPS。
-value.ENTITY_SHADOWS_DEFINE.-1=§aOFF
-value.ENTITY_SHADOWS_DEFINE.1=§4§k-§r§4§l§n§oON§r§4§k- §r§c[-]
+option.ENTITY_SHADOW=实体阴影
+option.ENTITY_SHADOW.comment=允许实体和方块实体投射阴影。§c[-]§r 实体阴影对性能的影响远超预期，在某些情况下会降低 50% 以上的 FPS。
+value.ENTITY_SHADOW.-1=§aOFF
+value.ENTITY_SHADOW.1=§c常规实体
+value.ENTITY_SHADOW.2=§4§k-§r§4§l§n§oFull§r§4§k- §r§c[-]
 
 option.DETAIL_QUALITY=细节品质
-option.DETAIL_QUALITY.comment=调整几个影响性能的小细节。调整以下品质：水体材质、TAA、照明调整、夜晚星云、下界风暴、末地光束、天空效果反射、雨水坑精度、摇曳效果。
+option.DETAIL_QUALITY.comment=调整几个影响性能的小细节。调整以下品质：水体材质、TAA、照明调整、夜晚星云、下界风暴、末地光束、天空效果反射、雨水坑精度、摇曳效果、运动模糊。
 value.DETAIL_QUALITY.0=§a土豆PC
 value.DETAIL_QUALITY.2=§e中
 value.DETAIL_QUALITY.3=§c高
@@ -276,8 +276,8 @@ value.ANISOTROPIC_FILTER.4=§e4x
 value.ANISOTROPIC_FILTER.8=§e8x
 value.ANISOTROPIC_FILTER.16=§4§l16x
 
-option.COLORED_LIGHTING=高级彩色照明(ACL) §e[*]§r
-option.COLORED_LIGHTING.comment=使用体素化和泛光照明为方块光添加颜色,同时引入一些新光源。§e[*]§r 此功能仅适用于 Iris 及受支持的平台。§e[*]§r 如果 “实时阴影品质” 处于关闭状态,则此设置将被禁用。§a[+]§r 此系统还启用了一些其他功能,您可以在 “其他” -> “ACL 功能” 菜单中单独启用/禁用这些功能。§c[-]§r 此效果的高区块值对性能的影响远超预期,每次增加,性能成本就会是上一层的两倍多。
+option.COLORED_LIGHTING=高级颜色追踪(ACT) §e[*]§r
+option.COLORED_LIGHTING.comment=使用体素化和泛光照明为方块光添加颜色,同时引入一些新光源。§e[*]§r 此功能仅适用于 Iris 及受支持的平台。§e[*]§r 如果 “实时阴影品质” 处于关闭状态,则此设置将被禁用。§a[+]§r 高级颜色追踪系统还启用了一些其他功能,您可以在 “其他” -> “ACL 功能” 菜单中单独启用/禁用这些功能。§c[-]§r 此效果的高区块值对性能的影响远超预期,每次增加都可能导致性能消耗超过前一档的两倍。§c[-]§r 彩色光照在处理非完整方块或模组方块时可能会产生一些漏光问题。
 value.COLORED_LIGHTING.0=§aOFF
 value.COLORED_LIGHTING.128=§c4 区块
 value.COLORED_LIGHTING.192=§c6 区块
@@ -286,6 +286,16 @@ value.COLORED_LIGHTING.384=§4§l12 区块
 value.COLORED_LIGHTING.512=§4§l§n§o16 区块
 value.COLORED_LIGHTING.768=§4§l§n§o24 区块 §r§c[-]
 value.COLORED_LIGHTING.1024=§4§k-§r§4§l§n§o32 区块§r§4§k- §r§c[-]
+
+option.WORLD_SPACE_REFLECTIONS=世界空间反射(WSR) §e[*]§r
+option.WORLD_SPACE_REFLECTIONS.comment=在世界空间而非屏幕空间计算反射。§e[*]§r 此功能仅在 “性能设置” 中启用 “高级颜色追踪” 且您的系统支持时有效。§e[*]§r 此效果的最大距离取决于 “高级颜色追踪”的 距离,但出于技术原因，其内部上限为 16 个区块。§c[-]§r 此效果可能会严重影响性能,尤其是在 “高级颜色追踪” 距离较高时。§c[-]§r 更换资源包后,世界空间反射可能会完全失效,但重启游戏后即可修复。§c[-]§r 使用分辨率高于 16x 的方块纹理的模组或资源包时,世界空间反射可能会导致严重的闪烁。
+value.WORLD_SPACE_REFLECTIONS.-1=§aOFF
+value.WORLD_SPACE_REFLECTIONS.1=§4§l§n§oON
+
+option.WORLD_SPACE_REF_MODE=世界空间反射(WSR) 模式 §e[*]§r
+option.WORLD_SPACE_REF_MODE.comment=决定世界空间反射的实现模式。§e[*]§r “仅世界空间反射(WSR)” 模式适合消除所有屏幕空间反射伪影,因为它只显示世界空间反射。而 “世界空间反射(WSR) + 屏幕空间光线追踪(SSR)” 模式更适合获得更丰富的反射细节,因为屏幕空间反射可以访问屏幕上的所有细节,而不受方块或设定距离的限制。
+value.WORLD_SPACE_REF_MODE.1=仅世界空间反射(WSR)
+value.WORLD_SPACE_REF_MODE.2=世界空间反射(WSR) + 屏幕空间光线追踪(SSR)
 
 option.SSAO_I=边缘阴影强度 (SSAO)
 option.SSAO_I.comment=确定屏幕空间环境光遮蔽 (SSAO) 的强度,它会在场景边缘添加额外的环境光阴影。§e[*]§r 如果在 “性能设置” 中禁用 SSAO,则此设置将不起作用。
@@ -321,8 +331,8 @@ value.LIGHTSHAFT_BEHAVIOUR.1=场景感知 §a[+]
 value.LIGHTSHAFT_BEHAVIOUR.2=常规
 value.LIGHTSHAFT_BEHAVIOUR.3=极端 §c[-]
 
-option.LIGHTSHAFT_SMOKE=光束烟雾
-option.LIGHTSHAFT_SMOKE.comment=在光束中添加体积烟雾。§c[-]§r 此效果可能会影响性能。
+option.LIGHTSHAFT_SMOKE=§e光束烟雾§r
+option.LIGHTSHAFT_SMOKE.comment=在光束中添加体积烟雾。§c[-]§r 此效果可能会严重影响性能。
 
 option.SPECIAL_PALE_GARDEN_LIGHTSHAFTS=特殊苍白花园光束
 option.SPECIAL_PALE_GARDEN_LIGHTSHAFTS.comment=使光束在 “苍白花园” 生物群系中看起来更加刺激。
@@ -372,7 +382,7 @@ option.DOUBLE_REIM_CLOUDS.comment=启用第二层 Reimagined 云层。§e[*]§r 
 option.CLOUD_ALT2=第二层云层高度
 option.CLOUD_ALT2.comment=确定第二层云层出现的世界高度。§e[*]§r 此设置仅在启用 “Reimagined” 或 “Unbound” 云层样式时有效。
 
-option.NETHER_STORM=下界风暴
+option.NETHER_STORM=§e下界风暴§r
 option.NETHER_STORM.comment=为下界添加类似烟雾的体积效果。§c[-]§r 此效果可能影响性能。
 
 option.NETHER_STORM_I=下界风暴不透明度
@@ -384,7 +394,7 @@ option.NETHER_STORM_LOWER_ALT.comment=确定下界风暴的最低起始点。下
 option.NETHER_STORM_HEIGHT=下界风暴高度
 option.NETHER_STORM_HEIGHT.comment=确定下界风暴形成高度。降低此值将导致下界风暴聚集在 “下界风暴较低高度” 附近。
 
-option.NETHER_VIEW_LIMIT=下界视野限制
+option.NETHER_VIEW_LIMIT=§e下界视野限制§r
 option.NETHER_VIEW_LIMIT.comment=确定迷雾在下界的最大可见距离。§c[-]§r 提高此值可能会在启用 “下界风暴” 时影响性能。
 value.NETHER_VIEW_LIMIT.96.0=6 区块
 value.NETHER_VIEW_LIMIT.112.0=7 区块
@@ -406,23 +416,23 @@ value.NETHER_COLOR_MODE.3=基于生物群系(已修改)
 value.NETHER_COLOR_MODE.2=基于生物群系
 value.NETHER_COLOR_MODE.0=恒定
 
-option.T_EXPOSURE=整体亮度
-option.T_EXPOSURE.comment=也称为 “色调映射曝光度”。调整整个图像的整体亮度。
+option.TM_EXPOSURE=整体亮度
+option.TM_EXPOSURE.comment=也称为 “色调映射曝光度”。调整整个图像的整体亮度。
 
-option.TM_WHITE_CURVE=白色亮度
-option.TM_WHITE_CURVE.comment=也称为 “色调映射白色曲线”。调整颜色达到全白的难易程度。
-
-option.T_UPPER_CURVE=亮色对比度
-option.T_UPPER_CURVE.comment=也称为 “色调映射上部曲线”。调整较亮颜色的对比度。
-
-option.T_LOWER_CURVE=暗色对比度
-option.T_LOWER_CURVE.comment=也称为 “色调映射下部曲线”。调整较暗颜色的对比度。
+option.TM_CONTRAST=整体对比度
+option.TM_CONTRAST.comment=调整较暗颜色的暗度和较亮颜色的亮度。
 
 option.T_SATURATION=饱和度
 option.T_SATURATION.comment=调整图像整体色彩鲜艳度。
 
 option.T_VIBRANCE=淡色饱和度
 option.T_VIBRANCE.comment=也称为 “鲜艳度”。调整图像的色彩鲜艳度，但原本就色彩鲜艳的像素受影响较小。
+
+option.TM_DARK_DESATURATION=暗色去饱和度
+option.TM_DARK_DESATURATION.comment=调整应用于较暗区域的颜色减弱效果的程度。
+
+option.TM_WHITE_PATH=白色可达性
+option.TM_WHITE_PATH.comment=调整较亮颜色接近白色的难易程度。
 
 option.COLORGRADING=§e颜色分级
 option.COLORGRADING.comment=启用自由混合最终颜色通道的设置。
@@ -521,11 +531,10 @@ option.SUN_MOON_DURING_RAIN.comment=确定下雨时太阳/月亮是否可见。
 option.NIGHT_STAR_AMOUNT=夜晚星星数量
 option.NIGHT_STAR_AMOUNT.comment=确定夜空中星星的数量。
 value.NIGHT_STAR_AMOUNT.0=OFF
-value.NIGHT_STAR_AMOUNT.1=稀少
-value.NIGHT_STAR_AMOUNT.2=较少
-value.NIGHT_STAR_AMOUNT.3=中等
-value.NIGHT_STAR_AMOUNT.4=较多
-value.NIGHT_STAR_AMOUNT.5=很多
+value.NIGHT_STAR_AMOUNT.1=较少
+value.NIGHT_STAR_AMOUNT.2=中等
+value.NIGHT_STAR_AMOUNT.3=较多
+value.NIGHT_STAR_AMOUNT.4=很多
 
 option.RAINBOWS=彩虹
 option.RAINBOWS.comment=早晨/傍晚时在太阳的对面出现彩虹。
@@ -548,8 +557,10 @@ value.AURORA_CONDITION.2=雪域生物群系
 value.AURORA_CONDITION.3=满月 + 雪域生物群系
 value.AURORA_CONDITION.4=满月 或 雪域生物群系
 
-option.NIGHT_NEBULA=夜晚星云
-option.NIGHT_NEBULA.comment=在夜空中添加星系状星云。这些星云由程序生成,每晚看起来都不同。§c[-]§r 此效果可能影响性能。§e[*]§r “Nebulae” 不是拼写错误,它是 Nebula 的复数形式 =D
+option.NIGHT_NEBULAE=§e夜晚星云§r
+option.NIGHT_NEBULAE.comment=在夜空中添加星系状星云。这些星云由程序生成,每晚看起来都不同。§c[-]§r 此效果可能影响性能。§e[*]§r “Nebulae” 不是拼写错误,它是 Nebula 的复数形式 =D
+value.NIGHT_NEBULAE.-1=OFF
+value.NIGHT_NEBULAE.1=§eON
 
 option.NIGHT_NEBULA_I=夜晚星云亮度
 option.NIGHT_NEBULA_I.comment=调整 “夜晚星云” 的亮度。
@@ -565,12 +576,12 @@ option.SPECIAL_BIOME_WEATHER.comment=改变寒冷干燥生物群系的大气平�
 option.WEATHER_TEX_OPACITY=天气贴图不透明度
 option.WEATHER_TEX_OPACITY.comment=调整降雨/降雪天气贴图的不透明度。
 
-option.SHADOW_SMOOTHING=平滑阴影
+option.SHADOW_SMOOTHING=§e平滑阴影§r
 option.SHADOW_SMOOTHING.comment=确定阴影的锐度。§c[-]§r 降低此值将增加阴影闪烁并影响性能。§e[*]§r 仅当 “实时阴影品质” 设置为 “低” 或更高时,此设置才有效。
-value.SHADOW_SMOOTHING.4=非常平滑
-value.SHADOW_SMOOTHING.3=平滑
-value.SHADOW_SMOOTHING.2=锐利 §c[-]
-value.SHADOW_SMOOTHING.1=非常锐利 §c[-]
+value.SHADOW_SMOOTHING.4=§a非常平滑
+value.SHADOW_SMOOTHING.3=§a平滑
+value.SHADOW_SMOOTHING.2=§c锐利 [-]
+value.SHADOW_SMOOTHING.1=§c非常锐利 [-]
 
 option.PIXELATED_SHADOWS=像素化阴影
 option.PIXELATED_SHADOWS.comment=使太阳/月亮投射的阴影看起来像素化。
@@ -617,8 +628,10 @@ value.PIXEL_SCALE.3=4
 value.PIXEL_SCALE.4=8
 value.PIXEL_SCALE.5=16
 
-option.BLOOM=泛光
-option.BLOOM.comment=为明亮物体和湿气启用模糊光晕。
+option.BLOOM_ENABLED=§e泛光§r
+option.BLOOM_ENABLED.comment=为明亮物体和湿气启用模糊光晕。§c[-]§r 此效果会影响性能。
+value.BLOOM_ENABLED.-1=OFF
+value.BLOOM_ENABLED.1=§eON
 
 option.BLOOM_STRENGTH=泛光强度
 option.BLOOM_STRENGTH.comment=确定明亮物体上的光晕强度,以及雨水/洞穴湿度造成的光晕。§c[-]§r 过多的光晕会导致图像变得比预期更模糊和更亮,尤其是在潮湿的环境中。
@@ -661,35 +674,39 @@ value.IMAGE_SHARPENING.8=8x §c[-]
 value.IMAGE_SHARPENING.9=9x §c[-]
 value.IMAGE_SHARPENING.10=10x §c[-]
 
-option.LENSFLARE_MODE=镜头光晕
+option.LENSFLARE_MODE=§e镜头光晕§r
 option.LENSFLARE_MODE.comment=朝向太阳/月亮时添加相机镜头反射效果。§c[-]§r 此效果会严重影响性能。
 value.LENSFLARE_MODE.0=OFF
-value.LENSFLARE_MODE.1=仅太阳
-value.LENSFLARE_MODE.2=太阳 & 月亮
+value.LENSFLARE_MODE.1=§c仅太阳
+value.LENSFLARE_MODE.2=§c太阳 & 月亮
 
 option.LENSFLARE_I=镜头光晕强度
 option.LENSFLARE_I.comment=调整镜头光晕效果的强度。
 
-option.TAA_MODE=时间过滤器
+option.TAA_MODE=§e时间过滤器§r
 option.TAA_MODE.comment=确定时间抗锯齿(TAA)的行为。智能 & 细微§a[+]§r:时间滤镜会少量应用于图像,不会造成伪影。强烈§e[*]§r:提供更佳的抗锯齿效果,但会导致额外的模糊和闪烁;在更高的帧速率和分辨率下,这可能是更好的选择。OFF§c[-]§r:关闭此功能会导致性能下降和效果品质下降。
 value.TAA_MODE.1=智能 & 细微 §a[+]
 value.TAA_MODE.2=强烈 §e[*]
-value.TAA_MODE.0=OFF §c[-]
+value.TAA_MODE.0=§cOFF [-]
 
 option.DISTANT_LIGHT_BOKEH=远光散景
 option.DISTANT_LIGHT_BOKEH.comment=通过在远处应用单像素模糊,使远处的光源看起来分散。§a[+]§r 此效果受益于 集成PBR+（可选）,通过调整远处的光源以获得更好的外观。
 
 option.MOTION_BLURRING=运动模糊
 option.MOTION_BLURRING.comment=在移动相机时对图像应用模糊。
+option.MOTION_BLUR_EFFECT=§e运动模糊§r
+option.MOTION_BLUR_EFFECT.comment=在移动相机时对图像应用模糊。§c[-]§r 此效果会影响性能。
+value.MOTION_BLUR_EFFECT.-1=OFF
+value.MOTION_BLUR_EFFECT.1=§eON
 
 option.MOTION_BLURRING_STRENGTH=运动模糊强度
 option.MOTION_BLURRING_STRENGTH.comment=调整运动模糊的强度。
 
-option.WORLD_BLUR=§e世界模糊
+option.WORLD_BLUR=§e世界模糊§r
 option.WORLD_BLUR.comment=启用世界模糊。距离模糊:模糊效果类似迷雾,取决于与相机的距离。景深:模糊效果取决于相机的焦点。§c[-]§r 此效果会严重影响性能。
-value.WORLD_BLUR.0=OFF
-value.WORLD_BLUR.1=距离模糊
-value.WORLD_BLUR.2=景深
+value.WORLD_BLUR.0=§aOFF
+value.WORLD_BLUR.1=§c距离模糊
+value.WORLD_BLUR.2=§c景深
 
 option.WB_FOV_SCALED=视野范围缩放模糊
 option.WB_FOV_SCALED.comment=将 “世界模糊” 调整为与相机视野范围(FOV) 一致。启用此功能后,如果放大视角,世界模糊会变得更加强烈。
@@ -730,8 +747,8 @@ value.IPBR_EMISSIVE_MODE.1=仅 IPBR+
 value.IPBR_EMISSIVE_MODE.3=labPBR > IPBR+
 value.IPBR_EMISSIVE_MODE.2=seuspbr > IPBR+
 
-option.IPBR_COMPATIBILITY_MODE=IPBR+ 兼容模式
-option.IPBR_COMPATIBILITY_MODE.comment=改变某些 IPBR+ 功能的计算方式,使其不那么激进,从而减少资源包或模组出现的问题。
+option.IPBR_COMPAT_MODE_DEFINE=IPBR+ 兼容模式
+option.IPBR_COMPAT_MODE_DEFINE.comment=改变某些 IPBR+ 功能的计算方式,使其不那么激进,从而减少资源包或模组出现的问题。
 
 option.IPBR_PARTICLE_FEATURES=IPBR+ 粒子特性
 option.IPBR_PARTICLE_FEATURES.comment=为粒子启用多种特性,包括发光熔岩粒子和颜色更好的水粒子等。
@@ -844,7 +861,7 @@ option.NORMAL_MAP_STRENGTH.comment=调整表面凹凸细节的强度。§e[*]§r
 option.CUSTOM_EMISSION_INTENSITY=自定义自发光强度
 option.CUSTOM_EMISSION_INTENSITY.comment=调整发光表面的强度。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 
-option.POM=视差遮蔽映射(POM)
+option.POM=§e视差遮蔽映射(POM)§r
 option.POM.comment=在表面启用 3D 效果。§c[-]§r 此效果会严重影响性能。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 value.POM.false=OFF
 value.POM.true=ON §c[-]
@@ -852,7 +869,7 @@ value.POM.true=ON §c[-]
 option.POM_DEPTH=POM 深度
 option.POM_DEPTH.comment=调整视差遮蔽映射(POM)的深度。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 
-option.POM_QUALITY=POM 品质
+option.POM_QUALITY=§ePOM 品质§r
 option.POM_QUALITY.comment=调整视差遮蔽映射的清晰度/准确度。§c[-]§r 高于 200 的值会严重影响性能。§e[*]§r 低于 100 的值将强制将 “POM 照明模式” 设置为 “平滑”。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 value.POM_QUALITY.16=16 §e[*]
 value.POM_QUALITY.32=32 §e[*]
@@ -860,7 +877,7 @@ value.POM_QUALITY.64=64 §e[*]
 value.POM_QUALITY.256=256 §c[-]
 value.POM_QUALITY.512=512 §c[-]
 
-option.POM_DISTANCE=POM 距离
+option.POM_DISTANCE=§ePOM 距离§r
 option.POM_DISTANCE.comment=调整视差遮蔽映射的计算距离。§e[*]§r 建议将此值保持在 50 以下以获得较小的性能提升。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 value.POM_DISTANCE.64=64 §e[*]
 value.POM_DISTANCE.128=128 §e[*]
@@ -873,10 +890,10 @@ option.POM_LIGHTING_MODE.comment=调整受 POM 影响的表面的照明样式。
 value.POM_LIGHTING_MODE.1=平滑
 value.POM_LIGHTING_MODE.2=锐利
 
-option.POM_ALLOW_CUTOUT=镂空表面的 POM §c[-]§r
+option.POM_ALLOW_CUTOUT=§e镂空表面的 POM §c[-]§r
 option.POM_ALLOW_CUTOUT.comment=使 POM 能够在镂空方块切面(如树叶间隙)上工作。§c[-]§r 此效果会严重影响性能。
 
-option.DIRECTIONAL_BLOCKLIGHT=定向方块光
+option.DIRECTIONAL_BLOCKLIGHT=§e定向方块光§r
 option.DIRECTIONAL_BLOCKLIGHT.comment=根据表面法线添加深度到方块光。§c[-]§r 在某些情况下可能会造成视觉伪影。§c[-]§r 此效果可能会影响性能。§e[*]§r “RP 支持” 选项必须设置为 “labPBR/seuspbr”,并且必须使用兼容的资源包。
 value.DIRECTIONAL_BLOCKLIGHT.0=OFF
 value.DIRECTIONAL_BLOCKLIGHT.3=细微 §c[-]
@@ -907,7 +924,7 @@ value.WAVING_I.50.0=§c疯狂
 option.NO_WAVING_INDOORS=封闭区域内不摇曳
 option.NO_WAVING_INDOORS.comment=使用天光检查来防止封闭区域内的方块摇曳。§c[-]§r 启用此设置可能会导致某些资源包或模组出现问题。
 
-option.WAVING_I_RAIN_MULT=雨天摇曳系数
+option.WAVING_I_RAIN_MULT=§e雨天摇曳系数§r
 option.WAVING_I_RAIN_MULT.comment=提升雨天摇曳的速度和强度。§c[-]§r 摇曳强度过高会导致摇曳方块穿入穿出其他方块。§c[-]§r 此设置超过 100 时会影响性能。
 value.WAVING_I.125=125 §c[-]
 value.WAVING_I.150=150 §c[-]
@@ -935,10 +952,15 @@ option.WAVING_RAIN.comment=为飘落的雨水/雪花纹理添加运动,使其看
 option.SPECIAL_PORTAL_EFFECTS=传送门特殊效果
 option.SPECIAL_PORTAL_EFFECTS.comment=为下界传送门、末地传送门和末地折跃门添加特殊动画和自发光。
 
-option.WORLD_OUTLINE=世界轮廓
+option.REFLECTION_RES=§e反射分辨率§r
+option.REFLECTION_RES.comment=更改方块上的 PBR 反射分辨率(如果您启用了 “世界空间反射” 设置,也会改变 “世界空间反射” 分辨率)以提升性能。§c[-]§r 在某些情况下,“完整” 分辨率反射对性能的影响可能远超预期。§e[*]§r 此功能在 Optifine 中无效。
+value.REFLECTION_RES.1.0=§4§l§n§o完整
+value.REFLECTION_RES.0.5=§a一半
+
+option.WORLD_OUTLINE=§e世界轮廓§r
 option.WORLD_OUTLINE.comment=在方块周围添加明亮轮廓。§c[-]§r 此效果可能会影响性能。
 
-option.WORLD_OUTLINE_THICKNESS=世界轮廓厚度
+option.WORLD_OUTLINE_THICKNESS=§e世界轮廓厚度§r
 option.WORLD_OUTLINE_THICKNESS.comment=确定世界轮廓效果的厚度。§c[-]§r 提高此设置可能会影响性能。
 
 option.WORLD_OUTLINE_I=世界轮廓亮度
@@ -947,19 +969,19 @@ option.WORLD_OUTLINE_I.comment=确定世界轮廓效果的强度。
 option.WORLD_OUTLINE_ON_ENTITIES=实体上的世界轮廓
 option.WORLD_OUTLINE_ON_ENTITIES.comment=确定世界轮廓效果是否适用于实体。§c[-]§r 此设置可能无法与某些自定义 PBR 资源包完美配合。
 
-option.DARK_OUTLINE=深暗轮廓
+option.DARK_OUTLINE=§e深暗轮廓§r
 option.DARK_OUTLINE.comment=在方块周围添加深暗轮廓。§c[-]§r 此效果可能会影响性能。
 
-option.DARK_OUTLINE_THICKNESS=深暗轮廓
+option.DARK_OUTLINE_THICKNESS=§e深暗轮廓厚度§r
 option.DARK_OUTLINE_THICKNESS.comment=确定深暗轮廓效果的厚度。§c[-]§r 提高此设置可能会影响性能。
 
-option.RAIN_PUDDLES=雨水坑
+option.RAIN_PUDDLES=§e雨水坑§r
 option.RAIN_PUDDLES.comment=在地形上添加下雨期间的水坑。§e[*]§r “RP 支持” 必须设置为除 “Basic” 之外的任何值,且 “方块反射品质” 必须设置为 “中” 或以上。 §c[-]§r 雨水坑可能严重影响性能。
-value.RAIN_PUDDLES.0=OFF
-value.RAIN_PUDDLES.1=§aON - 水坑
-value.RAIN_PUDDLES.2=§aON - 全覆盖
-value.RAIN_PUDDLES.3=§aON - §c总是§a水坑
-value.RAIN_PUDDLES.4=§aON - §c总是§a全覆盖
+value.RAIN_PUDDLES.0=§aOFF
+value.RAIN_PUDDLES.1=§c水坑 - 雨天
+value.RAIN_PUDDLES.2=§c全覆盖 - 雨天
+value.RAIN_PUDDLES.3=§c水坑 - 始终
+value.RAIN_PUDDLES.4=§c全覆盖 - 始终
 
 option.UNDERWATER_DISTORTION=水下畸变
 option.UNDERWATER_DISTORTION.comment=当相机在水中时,在屏幕上添加轻微的折射。
@@ -999,22 +1021,22 @@ option.MOON_PHASE_DARK=新月强度
 option.MOON_PHASE_DARK.comment=调整新月(最暗的月相)时的月相影响。
 
 option.CONNECTED_GLASS_EFFECT=连接玻璃
-option.CONNECTED_GLASS_EFFECT.comment=使所有类型的玻璃相互连接。§e[*]§r 此功能仅在 “性能设置” 中启用了 “高级彩色照明(ACL)” 且您的系统支持时才有效。§e[*]§r 如果安装了 “Continuity” 模组,此功能将自动禁用。
+option.CONNECTED_GLASS_EFFECT.comment=使所有类型的玻璃相互连接。§e[*]§r 此功能仅在 “性能设置” 中启用了 “高级颜色追踪(ACT)” 且您的系统支持时才有效。§e[*]§r 如果安装了 “Continuity” 模组,此功能将自动禁用。
 
 option.PORTAL_EDGE_EFFECT=传送门边缘发光
-option.PORTAL_EDGE_EFFECT.comment=为末地传送门和下界传送门添加发光边框效果。§e[*]§r 此功能仅在 “性能设置” 中启用了 “高级彩色照明(ACL)” 且您的系统支持时才有效。
+option.PORTAL_EDGE_EFFECT.comment=为末地传送门和下界传送门添加发光边框效果。§e[*]§r 此功能仅在 “性能设置” 中启用了 “高级颜色追踪(ACT)” 且您的系统支持时才有效。
 
 option.PUDDLE_VOXELIZATION=修复玻璃下的水坑
-option.PUDDLE_VOXELIZATION.comment=启用 “雨水坑” 设置后,可防止在带有玻璃屋顶的封闭区域内形成雨水坑。§e[*]§r 仅当在 “性能设置” 中启用了 “高级彩色照明(ACL)” 并且您的系统支持该功能时,此功能才有效。
+option.PUDDLE_VOXELIZATION.comment=启用 “雨水坑” 设置后,可防止在带有玻璃屋顶的封闭区域内形成雨水坑。§e[*]§r 仅当在 “性能设置” 中启用了 “高级颜色追踪(ACT)” 并且您的系统支持该功能时,此功能才有效。
 
 option.COLORED_CANDLE_LIGHT=彩色蜡烛照明
 option.COLORED_CANDLE_LIGHT.comment=使蜡烛投射的光与其底座颜色相同。§e[*]§r 去饱和的蜡烛颜色变体将继续使用平常的火焰颜色。
 
 option.COLORED_LIGHT_SATURATION=彩色照明饱和度
-option.COLORED_LIGHT_SATURATION.comment=调整高级彩色照明(ACL)产生的色彩饱和度。§e[*]§r 不建议更改此值,因为视觉效果设计为使用默认饱和度看起来最平衡。
+option.COLORED_LIGHT_SATURATION.comment=调整 “高级颜色追踪(ACT)” 产生的色彩饱和度。§e[*]§r 不建议更改此值,因为视觉效果设计为使用默认饱和度看起来最平衡。
 
 option.COLORED_LIGHT_FOG=彩色光雾
-option.COLORED_LIGHT_FOG.comment=为场景添加体积方块光迷雾,在夜间或地下尤为明显。§e[*]§r 此功能仅在 “性能设置” 中启用 “高级彩色照明(ACL)” 且系统支持此功能时有效。§c[-]§r 此效果会严重影响性能。
+option.COLORED_LIGHT_FOG.comment=为场景添加体积方块光迷雾,在夜间或地下尤为明显。§e[*]§r 此功能仅在 “性能设置” 中启用 “高级颜色追踪(ACT)” 且系统支持此功能时有效。§c[-]§r 此效果会严重影响性能。
 
 option.COLORED_LIGHT_FOG_I=光雾强度
 option.COLORED_LIGHT_FOG_I.comment=确定彩色光雾的亮度。
